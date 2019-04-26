@@ -1,0 +1,42 @@
+<span class="close" (click)="back()">x</span>
+
+
+<!-- <div *ngIf="sender">
+    <img [src]="sender.photo" alt="" style="width:80px;height:auto" onError="this.src='../assets/avatar.jpg'">
+
+    <label for="">Name:</label> {{ sender.name }} 
+    <br>
+    <label for="">Email:</label> {{ sender.email }}
+</div>
+<h1></h1> -->
+
+<ng-template [ngIf]="!sender">
+    <div class="time">
+        <span>
+                {{ now |date:'hh:mm' }}             
+        </span>    
+        <div>
+            <span class="seconds">{{ now |date:'a' }} </span>        
+            <span class="seconds">{{ now |date:'ss' }} </span>        
+        </div>
+    </div>
+
+    <div class="date">
+        {{now |date:'MMMM d, y'}}
+    </div>
+
+    <div class="day">
+        {{now |date:'EEEE'}}
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="sender">
+    <img [src]="sender.photo" alt="" onError="this.src='../assets/avatar.jpg'">    
+    <h2 class="sender"> {{ sender.name }} </h2>
+    <h1 class="summary"> {{summary}} </h1>     
+</ng-template>
+
+
+<audio #audioOption (ended)="playMessages()">
+    <source src='../assets/pager.mp3' type="audio/mp3">
+</audio>

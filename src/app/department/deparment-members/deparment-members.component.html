@@ -1,0 +1,41 @@
+<ul>
+  <li *ngFor="let mem of members; let i = index">
+
+    <div class="info">
+      <img [src]="mem.user.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+      <div>
+          <span>{{mem.user.name}}</span>
+          <span>{{mem.user.email}}</span>      
+      </div>      
+    </div>
+    <span *ngIf="mem.head" class="head">head</span>
+    
+
+ 
+    
+    <ng-template [ngIf]="!isCurrentUser(mem.user.id)">
+      <div class="actions">
+          <div (click)="action('remove',mem.user)">  
+            <p>remove</p>  
+          </div>
+          <div *ngIf="!mem.head" (click)="action('setHead',mem.user)"> 
+              <p>
+                  set as
+              </p>    
+              <p>
+                department head
+              </p> 
+          </div> 
+          <div *ngIf="mem.head" (click)="action('unsetHead',mem.user)"> 
+              <p>
+                  remove as 
+              </p>   
+              <p>
+                 department head
+              </p>   
+          </div>            
+      </div>      
+    </ng-template>
+
+  </li>
+</ul>

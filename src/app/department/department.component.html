@@ -1,0 +1,54 @@
+ 
+
+
+<div *ngIf="(method=='list' || method=='edit')">
+    
+    <button title="ADD NEW DEPARTMENT" class="addDepartment" *ngIf="isAdmin()" (click)="showDepartmentForm=true">+</button>
+
+    <div class="modal-form" *ngIf="showDepartmentForm && isAdmin()">
+            <span class="close" (click)="closeDepartmentForm()">close</span>
+            <form (ngSubmit)="onSubmit()" #f="ngForm">
+                <input type="hidden" id="id" name="id" [(ngModel)]="department.id">
+                <div class="title">
+                    <h1>{{department.id?'Edit':'Add new'}} Department</h1>
+                </div>
+                <div>
+                        <input type="text" placeholder="Department Name" id="name" name="name" [(ngModel)]="department.name">                        
+                </div>
+                <div>
+                    <button class="secondary" (click)="cancelEdit()"> Cancel </button>
+                    <button type="submit"> {{ department.id==""?'Submit':'Update' }} </button>                        
+                </div>
+            </form>
+    </div>
+
+    <button class="sendMessage" (click)="sendMessage()">Send Message</button>
+    <app-deparment-list></app-deparment-list>
+</div>
+
+
+
+<div *ngIf="method=='view'" class="departmentMembers">
+    <button style="
+    position: absolute;
+    left: 0;
+    top: 12px;
+    background: none;
+" (click)="backToList()">< Back</button>
+    <h1> {{department.name}} </h1>
+    <hr>
+    <div>
+        <div style="float:left;width:33.3%;padding-right: 10px;
+        box-sizing: border-box;">
+            <h3 class="listTitle">Members</h3>
+            <app-deparment-members [department]="department" ></app-deparment-members>
+        </div>
+        <div style="float:left;width:66.6%;position:relative">
+            <app-deparment-invites [department]="department"></app-deparment-invites>
+        </div>  
+        <div style="clear:both"></div>
+    </div> 
+</div>
+
+ 
+

@@ -1,0 +1,37 @@
+
+<div class="register-component authentication">
+    <div class="org">
+      <!-- <h1>{{ organization?.name }}</h1> -->
+      <img [src]="organization?.logo" alt="">  
+    </div>
+
+
+
+<form (ngSubmit)="onSubmit(signupform)" #signupform="ngForm">
+  <div class="title">
+      <h3>Register</h3>
+  </div>
+  <div>
+      <input type="text" placeholder="Name" id="name" name="name" ngModel><br>      
+  </div>
+  <div>
+      <input type="text" placeholder="EMAIL" id="email" name="email" ngModel><br>      
+  </div>
+
+  <div>
+      <input type="password" id="password" name="password" ngModel placeholder="PASSWORD">      
+  </div>
+  <div>
+      <input type="password" id="confirmPassword" name="confirmPassword" ngModel placeholder="CONFIRM PASSWORD">      
+  </div>
+  
+  <div>
+      <button class="secondary" (click)="cancelRegistration()">Cancel</button>
+      <button type="submit">Submit</button>      
+  </div>
+</form>
+</div>
+<!-- <a *ngIf="organization" [routerLink]="['/login',organization?.id]">Login</a> -->
+
+
+

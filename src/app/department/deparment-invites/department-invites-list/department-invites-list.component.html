@@ -1,0 +1,51 @@
+<div> 
+  <div style="float:left;width:50%">
+      <h3 class="listTitle">Invites</h3>
+      <ul>
+          <li *ngFor="let inv of sortedInvites.invite; let i = index">
+            <div class="info">
+              <img [src]="inv.user.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+
+              <div>
+                  <span>{{inv.user.name}}</span>
+                  <span>{{inv.user.email}}</span>      
+              </div>      
+            </div>
+
+            <div class="actions">
+                <div (click)="cancelInvite(inv.id)">  
+                  <p>cancel</p>  
+                </div>            
+            </div>  
+          </li>
+        </ul>                
+  </div>
+
+  <div style="float:left;width:50%;padding-left: 5px;box-sizing: border-box;">   
+      <h3 class="listTitle">Request</h3>   
+      <ul>
+          <li *ngFor="let req of sortedInvites.request; let i = index"> 
+
+              <div class="info">
+                <img [src]="req.user.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+  
+                <div>
+                    <span>{{req.user.name}}</span>
+                    <span>{{req.user.email}}</span>      
+                </div>      
+              </div>
+  
+              <div class="actions">
+                  <div (click)="responToRequest('reject',req.user)">  
+                    <p>Reject</p>  
+                  </div>   
+                  <div (click)="responToRequest('accept',req.user)">  
+                    <p>Accept</p>  
+                  </div>          
+              </div>  
+          </li> 
+        </ul>
+  </div>
+
+  <div style="clear:both"></div>
+</div>

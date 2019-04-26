@@ -1,0 +1,178 @@
+form{
+    max-width: 900px;
+    margin: auto;
+    width: 100%;
+    
+}
+
+form .fieldLabel{
+    font-size: 24px;
+    color: #fff; 
+    text-transform: uppercase; 
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+
+.rowSendTo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    flex-flow: column;
+}
+
+ 
+.rowSendTo .departmentsCheckboxList{
+    width:100%;
+}
+.rowSendTo .departmentsCheckboxList label{
+    float:left;
+    width: 33.3%;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(238, 238, 238, 0.15);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: rgba(255, 255, 255, 0.050980392156862744);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.textarea{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.textarea textarea{
+    border: none;
+    width: 98%;
+    height: 90px;
+    border-radius: 10px;
+    background-color: rgba(238, 238, 238, 0.15);
+    color: #000;
+    box-sizing: border-box;
+    font-size: 20px;
+    resize: none;
+    padding:10px;
+}
+
+.textarea div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    flex:1;
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+
+select,
+input[type=text],
+input[type=date],
+input[type=number],
+input[type=time] {
+    border: none;
+    background-color: rgba(238, 238, 238, 0.15);
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+select option{
+    background-color:rgba(238, 238, 238, 0.15);
+    border: none; 
+    color: #000;
+}
+
+.rowSchedule{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.rowSchedule > div{
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.instruction{
+    color: #fff;  
+    font-size: 14px; 
+}
+
+.day{
+    width:50px;
+}
+
+button{
+    width: 200px;
+}

@@ -1,0 +1,129 @@
+@keyframes glow
+{
+  0%
+  {
+    box-shadow: 1px 1px 0px pink;
+  } 
+
+  50%
+  {
+    box-shadow: 1px 1px 50px pink;
+  }
+
+  100%
+  {
+    box-shadow: 1px 1px 0px pink;
+  }
+}
+
+img{
+    animation: glow 3s infinite;
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 100px;
+    top: 0;
+}
+
+ 
+
+.summary{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 60px;
+}
+
+.sender{
+    background-color: #00000026;
+    color: #eaeaea;
+    font-size: 30px;
+    border-radius: 5px;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 21px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.time{
+    width: 600px;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;     
+}
+
+.time span{
+    color: #fff;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.time div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-size: 110px;
+    margin-left: 15px;
+}
+
+.date,.day{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.date{
+    left:0;
+    background-color: #000;
+}

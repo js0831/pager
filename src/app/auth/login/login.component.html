@@ -1,0 +1,33 @@
+<div class="login-component authentication">
+  <div class="org">
+    <!-- <h1>{{ organization?.name }}</h1> -->
+    <img [src]="organization?.logo" alt="">  
+  </div>
+
+  <form (ngSubmit)="onLogin(loginform)" #loginform="ngForm" autocomplete="off">
+      <div class="title">
+          <h3>login</h3>
+      </div>
+    <div>
+        <input class="large" autocomplete="false" type="text" placeholder="EMAIL" id="email" name="email" ngModel /><br>        
+    </div>
+
+    <div>
+        <input class="large" autocomplete="false" type="password" id="password" name="password" ngModel placeholder="PASSWORD" />        
+    </div>
+    
+    <div>
+      <button type="button" class="secondary" (click)="gotoRegister()">Register</button> 
+      <button type="submit">Login</button>
+    </div>
+
+  </form>
+  
+  <div class="google">
+      <a (click)="googleSignin()">
+          <img src='../assets/sign-in-with-google.svg' alt="">
+          Login with Google
+      </a>
+  </div>
+
+</div>

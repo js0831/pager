@@ -1,0 +1,42 @@
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding:10px;
+}
+.profile-component .info img{
+    width:80px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+    z-index: 2;
+    border: 3px solid #fff;
+}
+.logout{
+    background-color: #fff;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 14px;
+    padding: 2px 9px;
+    border-radius: 2px;
+}
+
+.info p{
+    min-width: 200px;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom: 1px;   
+}
+
+.info p:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; 
+}
+.info p:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; 
+}
+
+ 
+

@@ -1,0 +1,72 @@
+<div class="grid">
+  <div class="item" *ngFor="let dept of departments; let i = index">
+    <div class="inner">
+      <p class="name">
+          {{ dept.name }}
+      </p>
+      
+      <ul class="actions">
+        <ng-template [ngIf]="isAdmin()">    
+          <li class="delete" (click)="deleteDepartment(dept.id)">
+            <p>delete</p>
+          </li>
+          <li class="edit" (click)="seletectDepartment(i,'edit')">
+              <p>edit</p>
+          </li>
+        </ng-template>
+        <ng-template [ngIf]="isHeadOfDepartment(dept.id) || isAdmin()">   
+        <li class="view" (click)="seletectDepartment(i,'view')"> 
+          <p>view</p>
+        </li>
+        <li class="monitor" (click)="seletectDepartment(i,'monitor')"> 
+            <p>monitor</p>
+        </li>
+        </ng-template>    
+        
+
+        <ng-template [ngIf]="!isUserMember(dept.id) && !isPendingInvite(dept.id) && !isAdmin() && !isHeadOfDepartment()">        
+            <li (click)="join(dept.id)">
+              <p>Join</p>
+            </li>
+        </ng-template>
+        
+  
+        <ng-template [ngIf]="!isHeadOfDepartment() && isPendingInvite(dept.id)=='invite'">  
+            <li (click)="acceptInvitation(dept)"> 
+                <p>Accept</p> 
+            </li>
+        </ng-template>
+
+      </ul>
+
+      <ng-template [ngIf]="!isHeadOfDepartment() && isPendingInvite(dept.id)=='invite'">  
+          <span class="badge red"> Invited </span>   
+      </ng-template>
+
+      <ng-template [ngIf]="isUserMember(dept.id)">
+          <span class="badge green"> Member </span>    
+      </ng-template> 
+
+      <ng-template [ngIf]="isHeadOfDepartment(dept.id)">
+          <span class="badge yello"> Department Head </span>       
+      </ng-template>
+
+      <ng-template [ngIf]="!isHeadOfDepartment() && isPendingInvite(dept.id)=='request'">    
+            <span class="badge orange"> Waiting for approval </span>  
+      </ng-template>
+
+    </div>
+    
+    <ng-template [ngIf]="!isHeadOfDepartment(dept.id) && isUserMember(dept.id) || (!isHeadOfDepartment() && isPendingInvite(dept.id)=='request')">
+        <span class="blocker"></span>   
+    </ng-template>
+
+    <ng-template [ngIf]="!isHeadOfDepartment(dept.id) && isHeadOfDepartment()">
+        <span class="blocker"></span>   
+    </ng-template>
+
+  </div>
+  <div style="clear:both"></div>
+</div>
+
+<div style="height: 70px;display: block;">&nbsp;</div>

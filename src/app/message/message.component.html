@@ -1,0 +1,114 @@
+<!-- <app-profile></app-profile> --> 
+<div *ngIf="departments.length>0"> 
+    
+   <form (ngSubmit)="submitMessageForm()" [formGroup]="messageForm"> 
+      <h1>SEND MESSAGE</h1>
+      
+      <hr>
+
+     <div class="rowSendTo">
+        <label class="fieldLabel" for="">Send to</label>
+        <div class="departmentsCheckboxList" formArrayName="departments" >
+
+          <label class="container" *ngIf="messageForm.get('departments').controls.length>1">            
+            <input (change)="toggleSelectAll()" type="checkbox" id="all">
+            <span class="checkmark"></span>
+             All
+          </label> 
+
+          <label class="container" *ngFor="let deptControl of messageForm.get('departments').controls;let i=index;">           
+              <input [id]="departments[i].id" type="checkbox" [formControlName]="i">  
+              <span class="checkmark"></span>
+              {{departments[i].name}}
+          </label> 
+            
+           <div style="clear:both"></div>
+        </div> 
+     </div>
+     <hr>
+     <div class="textarea">
+        <div>
+            <textarea formControlName="message" name="message" id="message"  maxlength="200" placeholder="Message"></textarea>                    
+        </div>
+        <div>
+            <textarea formControlName="summary" name="summaryMessage" id="summaryMessage" maxlength="50" placeholder="Summary"></textarea>                    
+        </div>        
+      </div>
+      <hr>
+
+      <div class="rowSchedule">
+        <div>
+            <div>
+                <label class="fieldLabel" for="type">Type</label>
+                <i class="instruction">Instruction of the selected option here.</i>    
+            </div>
+            <select formControlName="type" name="type" id="type">
+                <option></option>
+               <option value="now">Now</option>
+               <option value="schedule">Schedule</option>
+               <option value="every">Every</option>
+            </select>
+        </div>
+        <div> 
+            <ng-template [ngIf]="messageForm.get('type').value && messageForm.get('type').value!='now'">
+                
+                <label class="fieldLabel" for="">Date Range</label>  
+                <div>
+                    <input formControlName="dateFrom" type="date" placeholder="from"> - <input formControlName="dateTo" type="date" placeholder="to">                    
+                </div>
+                
+                
+            </ng-template>
+        </div>
+      </div>
+      <hr>
+      <div class="rowSchedule">
+          
+            <div>
+                <ng-template [ngIf]="messageForm.get('type').value=='every'"> 
+                  <div>                        
+                    <label class="fieldLabel"  for="type">Every</label>    
+                    <i *ngIf="messageForm.get('every').value=='exotm'" class="instruction">Instruction of the selected option here.</i>                  
+                  </div>
+
+                  <div>
+                      <select formControlName="every" name="every" id="every">
+                          <option value="monday">Monday</option>
+                          <option value="tuesday">Tuesday</option>
+                          <option value="wednesday">Wednesday</option>
+                          <option value="thursday">Thursday</option>
+                          <option value="friday">Friday</option>
+                          <option value="saturday">Saturday</option>
+                          <option value="sunday">Sunday</option>
+                          <option value="weekdays">Weekdays</option>
+                          <option value="weekends">Weekends</option>
+                          <option value="everyday">Everyday</option>
+                          <option value="fdotm">First Day of the Month</option>
+                          <option value="ldotm">Last Day of the Month</option>
+                          <option value="exotm">Every [ x ] of the Month</option>
+                      </select> 
+
+                      <ng-template [ngIf]="messageForm.get('every').value=='exotm'">
+                          <input maxlength="2" class="day" formControlName="dayOfTheMonth" type="number" placeholder="Day">
+                      </ng-template>
+                    </div>
+
+                </ng-template>
+            </div>
+            <div>
+                <ng-template [ngIf]="messageForm.get('type').value && messageForm.get('type').value!='now'">                  
+                  <label class="fieldLabel" for="">Time</label> 
+                  <input formControlName="time" type="time" placeholder="hh:mm">  
+                </ng-template>  
+            </div> 
+      </div> 
+      <hr>
+      <div style="text-align: right;">
+          <button (click)="back()">BACK</button>
+          <button type="submit" [disabled]="!messageForm.valid || !hasSelectedDepartment()">SEND</button>    
+      </div>
+
+
+      
+   </form>
+</div>

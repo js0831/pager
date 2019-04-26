@@ -1,0 +1,17 @@
+<div class="profile-component">
+
+        <a class="logout" (click)="logout()">Logout</a> 
+
+        <div class="info">
+                <img [src]="currentUser.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+                <div>
+                    <p>
+                        <label for="">Name:</label> {{ currentUser.name }} <span *ngIf="isAdmin()">( admin )</span>                            
+                    </p>
+                    <p>
+                        <label for="">Email:</label> {{ currentUser.email }}                                                    
+                    </p>
+                </div>                
+        </div>
+  
+</div>

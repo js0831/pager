@@ -1,0 +1,42 @@
+
+
+.addDepartment{ 
+    font-size: 44px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px; 
+    min-width: 50px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.sendMessage{
+    position: fixed;
+    bottom: 5px;
+    left: 0;
+    max-width: 800px;
+    width:99%;
+    height: 60px;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.departmentMembers{
+    max-width: 900px;
+    margin: auto;
+    width: 100%;
+}
+
+.listTitle{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 5px;
+}
+

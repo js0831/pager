@@ -1,0 +1,22 @@
+
+
+<div class="modal-form" *ngIf="showInviteForm">
+        <span class="close" (click)="onShowInviteForm()">close</span>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="title">
+                <h1>Send Invite</h1>
+            </div>
+            <div>
+                    <input type="text" placeholder="email" name="email" id="email" required email ngModel>                    
+            </div>
+            <div>
+                    <button (click)="onShowInviteForm()" class="secondary">Cancel</button>  
+                    <button type="submit">Submit</button>                    
+            </div>
+        </form>
+</div>
+
+<button class="inviteBtn" (click)="onShowInviteForm()">Invite</button>
+ 
+
+<app-department-invites-list [department]="department"></app-department-invites-list>

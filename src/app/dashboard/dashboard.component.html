@@ -1,0 +1,3 @@
+<app-profile *ngIf="departmentView!='view'"></app-profile>
+<app-department (viewChanged)="onViewChange($event)"></app-department>
+ 

@@ -1,0 +1,120 @@
+img{
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+ul li{
+    /* padding:0 5px 2px 0px; */
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+ul li .info{
+    background-color: rgba(0, 0, 0,0.8);
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 75px;  
+}
+
+ul li .info > div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    height: 100%;
+    font-size: 18px; 
+}
+
+ul li span{
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+ul li .info span:last-child{
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+ul li .head{
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 6px;
+    left: 23px;
+    color: #ffe1e1;
+    text-decoration: none;
+    background-color: #cc2424;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px; 
+}
+
+ul li .actions{ 
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    border-radius: 60px;
+    background-color: rgba(255, 255, 255, 0.83); 
+    position: absolute;
+    
+    transition: all 0.5s;
+    box-sizing: border-box;
+ 
+    height: 80%;
+    top: 0; 
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+
+    right: -195%;
+    width: 92%;
+    left: 0%;
+    margin: auto;
+}
+
+.actions > div{
+    flex: 1;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer; 
+    transition: all 0.5s;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.actions > div:hover{
+    background-color: orange;
+}
+
+.actions p{
+    color: #000;
+    font-size: 12px;
+}
+
+ul li:hover .actions {
+    right:0;
+}
+
+ul li:hover .info span {
+    opacity: 0.1;
+}
+
+.listTitle{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 5px;
+}
