@@ -2,7 +2,7 @@
 
 
 <!-- <div *ngIf="sender">
-    <img [src]="sender.photo" alt="" style="width:80px;height:auto" onError="this.src='../assets/avatar.jpg'">
+    <img [src]="sender.photo" alt="" style="width:80px;height:auto" onError="this.src='assets/avatar.jpg'">
 
     <label for="">Name:</label> {{ sender.name }} 
     <br>
@@ -31,7 +31,7 @@
 </ng-template>
 
 <ng-template [ngIf]="sender">
-    <img [src]="sender.photo" alt="" onError="this.src='../assets/avatar.jpg'">    
+    <img [src]="sender.photo" alt="" onError="this.src='assets/avatar.jpg'">    
     <h2 class="sender"> {{ sender.name }} </h2>
     <h1 class="summary"> {{summary}} </h1>     
 </ng-template>

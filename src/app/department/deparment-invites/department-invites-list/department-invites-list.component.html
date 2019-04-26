@@ -4,7 +4,7 @@
       <ul>
           <li *ngFor="let inv of sortedInvites.invite; let i = index">
             <div class="info">
-              <img [src]="inv.user.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+              <img [src]="inv.user.photo" alt="" onError="this.src='assets/avatar.jpg'">
 
               <div>
                   <span>{{inv.user.name}}</span>
@@ -27,7 +27,7 @@
           <li *ngFor="let req of sortedInvites.request; let i = index"> 
 
               <div class="info">
-                <img [src]="req.user.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+                <img [src]="req.user.photo" alt="" onError="this.src='assets/avatar.jpg'">
   
                 <div>
                     <span>{{req.user.name}}</span>

@@ -2,7 +2,7 @@
   <li *ngFor="let mem of members; let i = index">
 
     <div class="info">
-      <img [src]="mem.user.photo" alt="" onError="this.src='../assets/avatar.jpg'">
+      <img [src]="mem.user.photo" alt="" onError="this.src='assets/avatar.jpg'">
       <div>
           <span>{{mem.user.name}}</span>
           <span>{{mem.user.email}}</span>      
